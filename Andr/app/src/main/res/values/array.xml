@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cardcompany">
+        <item>HYUNDAI card</item>
+        <item>BC card</item>
+        <item>KB card</item>
+    </string-array>
+
+
+</resources>

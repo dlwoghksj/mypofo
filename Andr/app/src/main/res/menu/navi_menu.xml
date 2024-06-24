@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_my_subs"
+        android:title="내 구독" />
+    <item
+        android:id="@+id/item_account_setting"
+        android:title="계정 설정" />
+    <item
+        android:id="@+id/item_notice"
+        android:title="공지사항" />
+    <item
+        android:id="@+id/item_service_center"
+        android:title="고객센터" />
+    <item
+        android:id="@+id/item_logout"
+        android:title="로그아웃"
+        />
+
+</menu>

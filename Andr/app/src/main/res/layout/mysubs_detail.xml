@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main">
+
+    <!--뒤로가기 툴바-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/backspace_toolbar"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:theme="@style/Theme.backspace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_subs_detail_icon"
+        android:layout_width="354dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/disney" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/tv_subs_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ott : "
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/tv_subs_detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이용 기간 : "
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/tv_subs_detail_createdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그룹 생성일 : "
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_subs_detail_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID : "
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:textColor="@color/white">
+
+        <TextView
+            android:id="@+id/tv_subs_detail_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PW : "
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/white">
+        <TextView
+            android:id="@+id/tv_subscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="구독 상태 "
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <Button
+        android:backgroundTint="#939393"
+        android:id="@+id/btn_cancel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="구독 취소"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>
