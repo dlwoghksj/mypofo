@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.spring.mapper.ManagerMapper">
+  	
+  	<!-- 회원가입 -->
+	<insert id="ManagerJoin">
+		insert into manager_info(managerCode, managerPw, managerName, managerEmail, position) 
+		values(#{managerCode}, #{managerPw}, #{managerName}, #{managerEmail}, (select position from manager where managerCode = #{managerCode}));
+	</insert>
+	
+	<!-- 메니저 체크 -->
+	<select id="managerCK" resultType="int">
+		select count(*) from manager where managerCode = #{managerCode}
+	</select>
+	
+	<!-- 매니저 등록 중복확인 -->
+	<select id="IDCK" resultType="int">
+		select count(*) from manager_info where managerCode = #{managerCode}
+	</select>
+	
+	<select id="ManagerLogin" resultType="com.spring.model.ManagerVO">
+		select * from manager_info
+		where managerCode = #{managerCode} and managerPw = #{managerPw}
+	</select>
+	
+	<select id="ManagerList" resultType="com.spring.model.ManagerVO">
+		select * from manager_info
+	</select>
+	
+	<delete id="managerDelete" parameterType="int">
+		delete from manager where managerCode = #{managerCode}
+	</delete>
+  </mapper>

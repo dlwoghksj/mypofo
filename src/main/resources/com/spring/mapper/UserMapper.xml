@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.spring.mapper.UserMapper">
+  
+  
+  <select id="userGetList" resultType="com.spring.model.UserVO">
+	select * 
+    from user
+    order by joinDate asc
+
+  </select>
+  
+  <select id="userGetInfo" resultType="com.spring.model.UserVO">
+ 	select *
+	from user
+    where user.userEmail = #{userEmail}
+  </select>
+  
+ <select id="userottlist" resultType="com.spring.model.UserVO">
+ 	select user.*,
+	if (isnull(ott_user.groupCode), "No Use", ott_user.groupCode) as groupuse
+	from user 
+	left join ott_user
+	on user.userEmail = ott_user.userEmail
+	where user.userEmail=#{userEmail};
+ </select>
+ 
+
+  </mapper>

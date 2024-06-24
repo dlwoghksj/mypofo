@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.spring.mapper.OttMapper">
+  
+  	
+	<select id="ottGetGroup" resultType="com.spring.model.OttVO">
+		select groupCode, ottCode, ottName, startDate, endDate, ottID, ottPW, ottPaymentDate, groupCount, createDate,if(paymentStatus = 0, "결제 대기중", "결제 완료") as paymentStatus from ott_group order by paymentStatus;
+	</select>
+
+	<select id="ottGetUser" resultType="com.spring.model.OttVO">
+		select userEmail from ott_user
+		where groupCode=#{groupCode}
+	</select>
+	
+	<select id="ottGetInfo" resultType="com.spring.model.OttVO">
+		select * from ott_group
+		where groupCode=#{groupCode}
+	</select>
+	
+	<select id="ottCodeList" resultType="com.spring.model.OttVO">
+		select * from ott_group 
+		where ottCode = #{ottCode}
+	</select>
+	
+	<update id="ottUpdateInfo">
+		update ott_group set ottID=#{ottID}, ottPW=#{ottPW}, ottPaymentDate=#{ottPaymentDate}, startDate=#{ottPaymentDate},
+		endDate=(select date_add(startDate, interval 1 month) where groupCode=#{groupCode}), paymentStatus = 1
+		where groupCode=#{groupCode};
+	</update>
+	
+	<select id="waitingList" resultType="com.spring.model.OttVO">
+		select * from ott_waiting order by new_first desc
+	</select>
+</mapper>

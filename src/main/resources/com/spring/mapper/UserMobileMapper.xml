@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.spring.mapper.UserMobileMapper">
+ <select id="giriboy">
+ 	call app.giriboy()
+ </select>
+ <select id="userLogin" resultType="com.spring.model.UserMobileVO">
+ 	select a.*, b.creditName, b.creditNumber, b.creditCVC from user a 
+ 	left join payment b 
+ 	on a.userEmail = b.userEmail
+ 	where a.userEmail = #{userEmail}
+ </select>
+ <select id="userProfile" resultType="com.spring.model.UserMobileVO">
+ 	select 
+	a.*, 
+	GROUP_CONCAT(b.subscription SEPARATOR ',') as subscription,
+	GROUP_CONCAT(b.userPaymentDate SEPARATOR ',') as userPaymentDate,
+	GROUP_CONCAT(c.groupCode SEPARATOR ',') as groupCode, 
+	GROUP_CONCAT(c.ottCode SEPARATOR ',') as ottCode,
+	GROUP_CONCAT(c.ottName SEPARATOR ',') as ottName,
+	GROUP_CONCAT(ifnull(c.startDate, "관리자 결제 대기중") SEPARATOR ',') as startDate,
+	GROUP_CONCAT(ifnull(c.endDate, "-") SEPARATOR ',') as endDate,
+	GROUP_CONCAT(ifnull(c.ottID, "관리자 결제 대기중") SEPARATOR ',') as ottID,
+	GROUP_CONCAT(ifnull(c.ottPW, "-") SEPARATOR ',') as ottPW,
+	GROUP_CONCAT(c.createDate SEPARATOR ',') as createDate,
+	d.creditName, d.creditNumber, d.creditCVC
+	from user a
+	left join ott_user b
+	on a.userEmail = b.userEmail
+	left join ott_group c
+	on b.groupCode = c.groupCode
+	left join payment d
+	on a.userEmail = d.userEmail
+	where a.userEmail = #{userEmail} and a.userPw=#{userPw}
+ </select>
+ 
+ <select id="groupUserList" resultType="com.spring.model.UserMobileVO">
+ 	select userEmail from ott_user where groupCode = #{createGroupCode}
+ </select>
+ 
+ <update id="userUpdate">
+ 	update user a left join payment b
+	on a.userEmail = b.userEmail
+	set a.userPw = #{userPw}, 
+	b.creditName=#{creditName}, b.creditNumber=#{creditNumber}, b.creditCVC=#{creditCVC}
+	where a.userEmail = #{userEmail};
+ </update>
+ 
+ <select id="userWaiting" resultType="com.spring.model.UserMobileVO">
+ 	select 
+	userEmail, 
+	GROUP_CONCAT(ottCode SEPARATOR ',') as waitingOttCode,
+	GROUP_CONCAT(userPaymentDate SEPARATOR ',') as waitingUserPaymentDate,
+	GROUP_CONCAT(if(new_first="1", "재그룹 예정", "신규 그룹 생성 예정") SEPARATOR ',') as new_first,
+	GROUP_CONCAT(subscription SEPARATOR ',') as waitingSubscription,
+    (select group_concat(waitingCount) waitingCount
+	from 
+	(select count(b.ottCode) as waitingCount
+	from ott_waiting as a join ott_waiting as b
+	on a.ottCode = b.ottCode
+	where a.userEmail =  #{userEmail}
+	group by a.ottCode)q) as waitingCount
+	from ott_waiting
+	where userEmail = #{userEmail}
+ </select>
+ 
+ <select id="userIDCK" resultType="int">
+	select count(*) from user where userEmail = #{userEmail} 
+ </select>
+ 
+ <insert id="userJoin">
+ 	insert into user(userEmail, userPw, userName, joinDate) values(#{userEmail}, #{userPw}, #{userName}, #{joinDate})
+ </insert>
+ 
+ 
+ <update id="waitingCancel">
+ 	update ott_waiting set subscription='0' where userEmail = #{userEmail} and ottCode = #{waitingOttCode}
+ </update>
+ 
+ <update id="subscriptionCancel">
+ 	update ott_user set subscription='0' where groupCode=#{groupCode} and userEmail = #{userEmail};
+ </update>
+ 
+ <select id="OttCK" resultType="int">
+ select count(*) from ott_user where userEmail=#{userEmail} and ottCode=#{waitingOttCode}
+ </select>
+ 
+ <select id="waitingCK" resultType="int">
+ select count(*) from ott_waiting where userEmail=#{userEmail} and ottCode=#{waitingOttCode}
+ </select>
+ 
+ <insert id="OttSubscription">
+ 	insert into ott_waiting values(#{userEmail}, #{waitingOttCode}, date_format(now(), '%Y%m%d'), '0', '1');
+ </insert>
+ </mapper>
