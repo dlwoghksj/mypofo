@@ -16,20 +16,21 @@
 
 
 ## 1-1. 기술 스택
-
+### 앱
+> **프로그래밍 언어:** Java
+> 
+> **마크업 언어:** XML
+> 
+> **IDE:** Android Studio
+### 웹
 > **프로그래밍 언어:** Java, JavaScript
 > 
 > **마크업 언어 및 스타일시트 언어:** HTML, CSS
 > 
 > **프레임 워크:** Spring Boot, Spring
 > 
-> **데이터베이스 언어:** SQL
-> 
-> **데이터베이스:** MySQL
-> 
-> **개발 도구:** Android Studio
-> 
-
+> **IDE:** Eclipse
+### 데이터베이스 : mysql
 <br />
 <br />
 
