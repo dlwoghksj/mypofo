@@ -68,8 +68,28 @@ WATTO는 OTT쉐어 어플리케이션 서비스로써 구독료를 더치페이�
 - OTT 웨이팅 리스트를 확인하고 관리할 수 있고 이를 통해 유저들에게 OTT계정을 배포.
 
 ## 어플리케이션 구현
-<br />
-### 로그인 페이지
-![기능구현1](https://github.com/dlwoghksj/mypofo/assets/104198797/9932535e-6d38-4201-bc71-c7d43f7c175a)
+### 로그인
+![기능구현1](https://github.com/dlwoghksj/mypofo/assets/104198797/04345a99-f1de-4c36-b0e1-566113b5f50d)
+### 회원가입
+![기능구현2](https://github.com/dlwoghksj/mypofo/assets/104198797/97e7a80e-71a0-4f74-93b6-ffdce8f40afe)
+### 메인화면
+![기능구현3](https://github.com/dlwoghksj/mypofo/assets/104198797/cc31257d-cffa-4c00-bce3-1bd7b31d912c)
+### OTT를 클릭했을시
+![기능구현5](https://github.com/dlwoghksj/mypofo/assets/104198797/366ddc58-f93f-4f36-960e-c44586aa274f)
+- 카드정보를 등록하지 않은 상태에서 구독을 누르면 카드정보를 등록하라는 알림이 나온다.
+### 네비게이션 메뉴
+![기능구현10](https://github.com/dlwoghksj/mypofo/assets/104198797/e1134f57-1188-4347-8909-4820adbbd185)
+### 내구독 화면1 ( 결제 대기 )
+![기능구현11](https://github.com/dlwoghksj/mypofo/assets/104198797/9bd5e269-ca5d-46ef-82f4-bc8cbf8e2ff9)
+- 관리자가 관리자 페이지에서 결제를 해주지 않았다면 관리자 결제 대기중이라는 문구가 나온디.
+### 내구독 화면2 ( 결제 완료시)
+![기능구현12](https://github.com/dlwoghksj/mypofo/assets/104198797/9e83df5f-5acf-47db-a1f3-d48426c49709)
+- 관리자 페이지에서 결제를 완료하면 웨이팅 리스트에 들어가 대기하게된다.
+### 대기자가 4명 모두 찼을시
+![기능구현15](https://github.com/dlwoghksj/mypofo/assets/104198797/7d4f6ab6-8c35-4e21-b481-5c568ec9f3bd)
+- OTT 서비스의 계정을 알 수 있다.
+
+
+
 
 
