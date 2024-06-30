@@ -37,4 +37,5 @@
 
 # 설계
 > ### 인터페이스 설계
+![UI 설계](https://github.com/dlwoghksj/mypofo/assets/104198797/6264be0c-35a8-468b-ac3e-2cb81e89ca50)
 
