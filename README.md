@@ -94,5 +94,10 @@ https://drive.google.com/file/d/1_fzbSYGkBclfxxxafccVpcYyeQQXu69o/view?usp=shari
 ### 구현 영상
 https://drive.google.com/file/d/11kPb3I15ktlg7o6n0xmn1E3JzNfzeN8Q/view?usp=sharing
 
+### ERD
+<img width="743" alt="erd" src="https://github.com/dlwoghksj/mypofo/assets/104198797/edbcd4ae-0784-4471-923c-268f1bc6b176">
+
+
+
 
 
