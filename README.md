@@ -62,10 +62,10 @@ WATTO는 OTT쉐어 어플리케이션 서비스로써 구독료를 더치페이�
 
 # 4. 구현
 ## 관리자 페이지(웹으로 구현)
-[관리자페이지.pdf](https://github.com/user-attachments/files/16043777/default.pdf)
+https://drive.google.com/file/d/1_fzbSYGkBclfxxxafccVpcYyeQQXu69o/view?usp=sharing
 - 관리자만 접근할 수 있는 페이지
 - 관리자는 네비게이션 메뉴를 통해 유저를 관리할 수 있음
-- OTT 웨이팅 리스트를 확인하고 관리할 수 있고 이를 통해 유저들에게 OTT계정을 배포.
+- OTT 웨이팅 리스트를 확인하고 관리할 수 있고 이를 통해 결제 후 유저들에게 OTT계정을 배포.
 
 ## 어플리케이션 구현
 ### 로그인
