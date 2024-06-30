@@ -23,7 +23,7 @@
 > 
 > **IDE:** Android Studio
 ### 웹
-> **프로그래밍 언어:** Java, JavaScript
+> **프로그래밍 언어:** Java, JavaScript, jsp
 > 
 > **마크업 언어 및 스타일시트 언어:** HTML, CSS
 > 
