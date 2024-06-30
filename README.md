@@ -87,16 +87,34 @@ https://drive.google.com/file/d/1_fzbSYGkBclfxxxafccVpcYyeQQXu69o/view?usp=shari
 ### 대기자가 4명 모두 찼을시
 ![기능구현15](https://github.com/dlwoghksj/mypofo/assets/104198797/c08cce61-e67b-4142-b97a-892059e399d5)
 - OTT 서비스의 계정을 알 수 있다.
-<br />
+
 <br />
 
-### 구현 영상
-https://drive.google.com/file/d/11kPb3I15ktlg7o6n0xmn1E3JzNfzeN8Q/view?usp=sharing
-
+## 데이터베이스
 ### ERD
 <img width="743" alt="erd" src="https://github.com/dlwoghksj/mypofo/assets/104198797/edbcd4ae-0784-4471-923c-268f1bc6b176">
 
+### 주요 쿼리문
 
+-그룹에서 한명 빠지고 대기유저가 있을 경우 그룹에 추가
 
+~~~
+insert into ott_user select a.groupCode, b.userEmail, a.ottCode, '1' as subscription, b.userPaymentDate 
+from ott_group a join ott_waiting b on a.ottCode = b.ottCode 
+where groupCount between 1 and 3 order by userPaymentDate limit count;
+~~~
 
+-대기자가 없고 그룹 count가 4이하일 때 그룹 삭제 후 기존 유저를 대기자 목록으로 이동
 
+~~~
+insert into ott_waiting select a.userEmail, a.ottCode, a.userPaymentDate, '1' as first
+from ott_user a 
+where a.subscription = '1' and a.groupCode in (select groupCode from ott_group where groupCount < 4);
+~~~
+
+<br />
+<br />
+<br />
+
+## 구현 영상
+https://drive.google.com/file/d/11kPb3I15ktlg7o6n0xmn1E3JzNfzeN8Q/view?usp=sharing
