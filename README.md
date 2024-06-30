@@ -86,10 +86,13 @@ WATTO는 OTT쉐어 어플리케이션 서비스로써 구독료를 더치페이�
 ![기능구현12](https://github.com/dlwoghksj/mypofo/assets/104198797/9e83df5f-5acf-47db-a1f3-d48426c49709)
 - 관리자 페이지에서 결제를 완료하면 웨이팅 리스트에 들어가 대기하게된다.
 ### 대기자가 4명 모두 찼을시
-![기능구현15](https://github.com/dlwoghksj/mypofo/assets/104198797/7d4f6ab6-8c35-4e21-b481-5c568ec9f3bd)
+![기능구현15](https://github.com/dlwoghksj/mypofo/assets/104198797/c08cce61-e67b-4142-b97a-892059e399d5)
 - OTT 서비스의 계정을 알 수 있다.
+<br />
+<br />
 
-
+### 구현 영상
+https://drive.google.com/file/d/11kPb3I15ktlg7o6n0xmn1E3JzNfzeN8Q/view?usp=sharing
 
 
 
