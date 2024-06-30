@@ -40,22 +40,22 @@ WATTO는 OTT쉐어 어플리케이션 서비스로써 구독료를 더치페이�
 <br />
 
 # 3. 설계
-## 인터페이스 설계)
+## 1) 인터페이스 설계
 ![UI 설계](https://github.com/dlwoghksj/mypofo/assets/104198797/6264be0c-35a8-468b-ac3e-2cb81e89ca50)
 
 <br />
 
-## 시스템 구조)
+## 2) 시스템 구조
 ![시스템구조1](https://github.com/dlwoghksj/mypofo/assets/104198797/b5c9eb2a-5181-411e-8d7f-d9aad7aa5885)
 
 <br />
 
-## 작동 방식)
+## 3) 작동 방식
 ![시스템구조2](https://github.com/dlwoghksj/mypofo/assets/104198797/d58e6d15-4996-48e0-a4f5-0357e4c83ce1)
 
 <br />
 
-## 구독 취소)
+## 4) 구독 취소
 ![시스템구조3](https://github.com/dlwoghksj/mypofo/assets/104198797/5c870efa-b69b-4ab0-ab5e-db87a7dec831)
 
 <br />
