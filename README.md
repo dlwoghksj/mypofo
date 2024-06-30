@@ -69,8 +69,7 @@ WATTO는 OTT쉐어 어플리케이션 서비스로써 구독료를 더치페이�
 
 ## 어플리케이션 구현
 <br />
-###로그인 페이지
-<br />
+### 로그인 페이지
 ![기능구현1](https://github.com/dlwoghksj/mypofo/assets/104198797/9932535e-6d38-4201-bc71-c7d43f7c175a)
 
 
